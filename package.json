@@ -4,20 +4,23 @@
   "description": "In which I learn about GitHub Actions for CI and CD. I intend to follow the GitHub Actions tutorial ( https://docs.github.com/en/actions/learn-github-actions ) and then apply what I've learned to other projects.",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8080"
+    "start": "http-server ./pages -d false -p 8080"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1Copenut/learning-gha.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["github actions"],
+  "author": "Trevor Pierce",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/1Copenut/learning-gha/issues"
   },
   "homepage": "https://github.com/1Copenut/learning-gha#readme",
   "dependencies": {
     "http-server": "^14.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^9.5.2"
   }
 }
