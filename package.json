@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/1Copenut/learning-gha.git"
   },
-  "keywords": ["github actions"],
+  "keywords": [
+    "github actions"
+  ],
   "author": "Trevor Pierce",
   "license": "MIT",
   "bugs": {
@@ -19,8 +21,5 @@
   "homepage": "https://github.com/1Copenut/learning-gha#readme",
   "dependencies": {
     "http-server": "^14.0.0"
-  },
-  "devDependencies": {
-    "cypress": "^9.5.2"
   }
 }
