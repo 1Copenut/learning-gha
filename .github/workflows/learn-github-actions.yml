@@ -1,14 +1,26 @@
 name: learn-github-actions
-on: [push]
+on:
+  pull_request:
+    branches:
+      - main
+      - "releases/**"
 jobs:
-  check-bats-version:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-22.04]
+  upgrade-runner:
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Update runner
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade
+  check-bats-version:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Check out Node and npm
+        uses: actions/setup-node@v3
         with:
           node-version: "18"
       - run: npm install -g bats
@@ -16,8 +28,10 @@ jobs:
   start-web-server:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Check out Node and npm
+        uses: actions/setup-node@v3
         with:
           node-version: "18"
       - run: npm install &
