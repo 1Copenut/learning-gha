@@ -15,6 +15,7 @@ jobs:
           sudo apt-get update
           sudo apt-get upgrade
   check-bats-version:
+    needs: upgrade-runner
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
@@ -26,6 +27,7 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
   start-web-server:
+    needs: [upgrade-runner, check-bats-version]
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
