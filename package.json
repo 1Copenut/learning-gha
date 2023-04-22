@@ -4,8 +4,12 @@
   "description": "In which I learn about GitHub Actions for CI and CD. I intend to follow the GitHub Actions tutorial ( https://docs.github.com/en/actions/learn-github-actions ) and then apply what I've learned to other projects.",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8080"
+    "start": "http-server -p 8080 -c-1",
+    "cypress:dev": "npx cypress open",
+    "cypress:ci": "npx cypress run --browser chrome",
+    "lint": "tsc --noEmit --pretty --allowJs --strict cypress/**/*.cy.ts"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/1Copenut/learning-gha.git"
@@ -19,5 +23,12 @@
   "homepage": "https://github.com/1Copenut/learning-gha#readme",
   "dependencies": {
     "http-server": "^14.0.0"
+  },
+  "devDependencies": {
+    "axe-core": "^4.7.0",
+    "cypress": "^12.10.0",
+    "cypress-axe": "^1.4.0",
+    "node-fetch": "^3.3.1",
+    "typescript": "^5.0.4"
   }
 }
