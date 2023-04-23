@@ -14,8 +14,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get upgrade
-  check-bats-version:
-    needs: upgrade-runner
+  install-dependencies:
+    needs: [upgrade-runner]
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
@@ -24,17 +24,17 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - run: npm install -g bats
-      - run: bats -v
-  start-web-server:
-    needs: [upgrade-runner, check-bats-version]
+      - run: npm install
+  run-cypress-e2e-tests:
+    needs: [upgrade-runner, install-dependencies]
     runs-on: ubuntu-22.04
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: Check out Node and npm
-        uses: actions/setup-node@v3
+      - name: Cypress run
+        uses: cypress-io/github-action@v5.1.0
         with:
-          node-version: "18"
-      - run: npm install &
-      - run: npm start &
+          browser: chrome
+          start: npm run start
+          # Wait for the local server to be up
+          wait-on: "http://localhost:8080"
