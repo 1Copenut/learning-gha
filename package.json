@@ -21,13 +21,11 @@
     "url": "https://github.com/1Copenut/learning-gha/issues"
   },
   "homepage": "https://github.com/1Copenut/learning-gha#readme",
-  "dependencies": {
-    "http-server": "^14.0.0"
-  },
   "devDependencies": {
     "axe-core": "^4.7.0",
     "cypress": "^12.10.0",
     "cypress-axe": "^1.4.0",
+    "http-server": "^14.0.0",
     "node-fetch": "^3.3.1",
     "typescript": "^5.0.4"
   }
