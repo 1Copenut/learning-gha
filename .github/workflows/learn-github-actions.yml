@@ -38,7 +38,3 @@ jobs:
           start: npm run start
           # Wait for the local server to be up
           wait-on: "http://localhost:8080"
-          # Cancel the run after 2 failed tests
-          auto-cancel-after-failures: 2
-          # Silence Cypress output from stdout
-          quiet: true
