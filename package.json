@@ -4,7 +4,7 @@
   "description": "In which I learn about GitHub Actions for CI and CD. I intend to follow the GitHub Actions tutorial ( https://docs.github.com/en/actions/learn-github-actions ) and then apply what I've learned to other projects.",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8080 -c-1",
+    "start": "http-server -c-1 -d false -p 8080",
     "cypress:dev": "npx cypress open",
     "cypress:ci": "npx cypress run --browser chrome",
     "lint": "tsc --noEmit --pretty --allowJs --strict cypress/**/*.cy.ts"
