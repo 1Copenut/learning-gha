@@ -32,7 +32,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Cypress run
-        uses: actions/cypress-io/github-action@v5
+        uses: cypress-io/github-action@v5.1.0
         with:
           browser: chrome
           start: npm run start
