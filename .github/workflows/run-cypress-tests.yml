@@ -14,16 +14,16 @@ jobs:
           sudo apt-get upgrade
 
       - name: Checkout git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@49933ea5288caeca8642d1e84afbd3f7d6820020 #v4.4.2
 
       - name: Checkout Node and npm
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 #v4.4.0
         with:
-          node-version: "18"
+          node-version: "22"
       - run: npm install
 
       - name: Checkout Cypress and run e2e tests
-        uses: cypress-io/github-action@v5.1.0
+        uses: cypress-io/github-action@2cc692b79ac956235eff1a8fe6c33b462f3c9dc6 #v6.10.2
         with:
           browser: chrome
           start: npm run start
