@@ -91,7 +91,6 @@ export default defineConfig({
           console.table(messageArr);
           return null;
         },
-        // TODO: Add the Cypress write to JSON file
       });
 
       return config;
