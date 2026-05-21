@@ -23,8 +23,8 @@
   "homepage": "https://github.com/1Copenut/learning-gha#readme",
   "devDependencies": {
     "axe-core": "^4.10.3",
-    "cypress": "^14.5.3",
-    "cypress-axe": "^1.6.0",
+    "cypress": "^15.15.0",
+    "cypress-axe": "^1.7.0",
     "http-server": "^14.1.1",
     "node-fetch": "^3.3.2",
     "typescript": "^5.9.2"
