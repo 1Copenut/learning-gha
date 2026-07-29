@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - "releases/**"
+permissions:
+  contents: read
 jobs:
   run-cypress-tests:
     runs-on: ubuntu-22.04
